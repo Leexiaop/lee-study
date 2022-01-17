@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+	<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}" indicator-active-color="#fff">
+        <block wx:for="{{bannerList}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item">
+				<image src="{{item.src}}" style="width: 100%;"/>
+				<view class="swiper-content">
+					<view class="title">{{item.title}}</view>
+					<view class="tip">{{item.tip}}</view>
+				</view>
+			</view>
+          </swiper-item>
+        </block>
+    </swiper>
+	<van-grid column-num="3" square>
+		<block wx:for="{{gridList}}" wx:key="index" wx:for-item="item">
+			<van-grid-item use-slot bind:click="onGridClick" data-id="{{item.id}}">
+				<image style="width: 100%;" src="{{item.src}}"/>
+				<view class="grid-name">{{item.name}}</view>
+			</van-grid-item>
+		</block>
+	</van-grid>
+</view>

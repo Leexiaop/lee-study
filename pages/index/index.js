@@ -1,0 +1,106 @@
+// index.js
+// const app = getApp()
+
+Page({
+	data: {
+		bannerList: [
+			{
+				title: '难说再见',
+				tip: '回看马上过去的2021，有太多的不舍',
+				src: '../../assets/images/2021.jpeg'
+			},
+			{
+				title: '满心期待',
+				tip: '展望即将到来的2022，期待总是让人激动不已',
+				src: '../../assets/images/2021.jpeg'
+			}
+		],
+		gridList: [
+			{
+				id: 0,
+				name: 'JavaSrcipt基础',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 1,
+				name: 'HTML与CSS',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 2,
+				name: 'Vue',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 3,
+				name: 'React',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 4,
+				name: 'Angular',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 5,
+				name: '算法',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 6,
+				name: '前端工程化',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 7,
+				name: 'HTTP与前端安全',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 8,
+				name: '微信与小程序相关',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 9,
+				name: '前端状态管理',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 10,
+				name: '性能优化',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 11,
+				name: '工具开发与使用',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 12,
+				name: '实战与Coding',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 13,
+				name: 'HR与工资',
+				src: '../../assets/images/web.jpeg'
+			},
+			{
+				id: 14,
+				name: '其他',
+				src: '../../assets/images/web.jpeg'
+			}
+		]
+	},
+	onLoad (options) {
+	},
+	onShow () {
+		wx.showTabBar();
+	},
+	onGridClick (grid) {
+		wx.navigateTo({
+		  url: `/pages/list/index?type=${grid.target.dataset.id}`,
+		})
+	}
+});

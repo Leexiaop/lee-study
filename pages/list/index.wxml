@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+	<van-cell-group>
+		<van-cell wx:for="{{dataList}}" wx:key="index" title="{{item.title}}" data-id="{{item.id}}" is-link bindtap="onItemClick"/>
+	</van-cell-group>
+</view>

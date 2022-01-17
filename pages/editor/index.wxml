@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<view class="container">
+	<van-cell-group style="width: 100%;">
+		<van-field
+			value="{{form.typeName}}"
+			placeholder="请选择问题所属"
+			label="问题所属"
+			right-icon="arrow-down"
+			error="{{rule.typeId.isRequired}}"
+			error-message="{{rule.typeId.message}}"
+			bind:click-icon="onTypeIdSelect"
+			readonly
+			required
+		/>
+		<van-field
+			value="{{form.question}}"
+			placeholder="请写下您的问题"
+			label="问题"
+			bindinput="getQuestion"
+			error="{{rule.question.isRequired}}"
+			error-message="{{rule.question.message}}"
+			adjust-position
+			required
+		/>
+		<van-field
+			value="{{form.answer}}"
+			placeholder="请写下您的答案"
+			label="答案"
+			bindinput="getAnswer"
+			autosize="{minHeight: '300'}"
+			type="textarea"
+			adjust-position
+			fixed
+		/>
+	</van-cell-group>
+	<view class="btn">
+		<view bindtap="onBackClick">取消</view>
+		<view bindtap="onSubmitClick">保存</view>
+	</view>
+	<van-action-sheet
+		show="{{ isActionShow }}"
+		actions="{{ gridList }}"
+		bind:close="onClose"
+		bind:select="onSelect"
+	/>
+</view>

@@ -1,6 +1,15 @@
 <!--index.wxml-->
 <view class="container">
-	<van-cell-group>
-		<van-cell wx:for="{{dataList}}" wx:key="index" title="{{item.title}}" data-id="{{item.id}}" is-link bindtap="onItemClick"/>
-	</van-cell-group>
+	<block wx:if="{{questionList.length}}">
+		<van-swipe-cell style="width: 100%;" right-width="{{ 65 }}" left-width="{{ 65 }}" wx:for="{{questionList}}" wx:key="index">
+			<view slot="left">选择</view>
+			<van-cell-group>
+				<van-cell title="{{item.question}}" data-id="{{item.id}}" is-link bindtap="onItemClick"/>
+			</van-cell-group>
+			<view slot="right">删除</view>
+		</van-swipe-cell>
+	</block>
+	<block wx:else>
+		<van-empty description="暂无内容" />
+	</block>
 </view>

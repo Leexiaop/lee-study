@@ -2,13 +2,13 @@
 <view class="container">
 	<van-cell-group style="width: 100%;">
 		<van-field
-			value="{{form.typeName}}"
+			value="{{moduleName}}"
 			placeholder="请选择问题所属"
 			label="问题所属"
 			right-icon="arrow-down"
-			error="{{rule.typeId.isRequired}}"
-			error-message="{{rule.typeId.message}}"
-			bind:click-icon="onTypeIdSelect"
+			error="{{rule.moduleId.isRequired}}"
+			error-message="{{rule.moduleId.message}}"
+			bind:click-icon="onModuleIdSelect"
 			readonly
 			required
 		/>
@@ -22,7 +22,7 @@
 			adjust-position
 			required
 		/>
-		<van-field
+		<!-- <van-field
 			value="{{form.answer}}"
 			placeholder="请写下您的答案"
 			label="答案"
@@ -31,7 +31,7 @@
 			type="textarea"
 			adjust-position
 			fixed
-		/>
+		/> -->
 	</van-cell-group>
 	<view class="btn">
 		<view bindtap="onBackClick">取消</view>
@@ -39,7 +39,7 @@
 	</view>
 	<van-action-sheet
 		show="{{ isActionShow }}"
-		actions="{{ gridList }}"
+		actions="{{ moduleList }}"
 		bind:close="onClose"
 		bind:select="onSelect"
 	/>

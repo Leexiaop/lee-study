@@ -16,8 +16,8 @@
 	<van-grid column-num="3" square>
 		<block wx:for="{{gridList}}" wx:key="index" wx:for-item="item">
 			<van-grid-item use-slot bind:click="onGridClick" data-id="{{item.id}}">
-				<image style="width: 100%;" src="{{item.src}}"/>
-				<view class="grid-name">{{item.name}}</view>
+				<image mode="aspectFit" style="width: 100%;" src="{{item.src}}"/>
+				<!-- <view class="grid-name">{{item.name}}</view> -->
 			</van-grid-item>
 		</block>
 	</van-grid>

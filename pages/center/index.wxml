@@ -1,4 +1,58 @@
 <!--index.wxml-->
 <view class="container">
-	个人中心
+	<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}" indicator-active-color="#fff">
+        <block wx:for="{{bannerList}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item">
+				<image src="{{item.src}}" style="width: 100%;"/>
+				<view class="swiper-content">
+					<view class="title">{{item.title}}</view>
+					<view class="tip">{{item.tip}}</view>
+				</view>
+			</view>
+          </swiper-item>
+        </block>
+    </swiper>
+	<view class="banner">
+		<van-image
+			class="img"
+			width="72"
+			height="72"
+			round
+			lazy-load
+			src="https://img.yzcdn.cn/vant/cat.jpeg"
+		/>
+		<view class="right">
+			<view>
+				<view>点赞</view>
+				<view>23</view>
+			</view>
+			<view>
+				<view>发布</view>
+				<view>23</view>
+			</view>
+			<view>
+				<view>收藏</view>
+				<view>31</view>
+			</view>
+			<view>
+				<view>评论</view>
+				<view>32</view>
+			</view>
+		</view>
+		<van-button type="primary" block size="small">去登录</van-button>
+	</view>
+	<van-divider />
+	<van-cell-group>
+		<van-cell title="我的点赞" is-link bindtap="onItemClick" border="{{false}}" />
+		<van-cell title="我的发布" is-link bindtap="onItemClick" border="{{false}}" />
+		<van-cell title="我的收藏" is-link bindtap="onItemClick" border="{{false}}" />
+		<van-cell title="我的品论" is-link bindtap="onItemClick" border="{{false}}" />
+		<van-cell title="我的审批" is-link bindtap="onItemClick" border="{{false}}" />
+	</van-cell-group>
+	<van-notice-bar
+		class="notice"
+		left-icon="volume-o"
+		text="走了那么多路，看了那么多书，敲了成千上万行的代码，却总觉得少一个登录。授权登录小程序，助你走上人生巅峰。"
+	/>
 </view>

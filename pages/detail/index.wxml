@@ -1,4 +1,43 @@
 <!--index.wxml-->
 <view class="container">
-	详情
+	<!-- <view class="title">{{question.question}}</view> -->
+	<block wx:if="{{isLoading}}">
+		<view class="loading">
+			<van-loading type="spinner" color="#fff" />
+		</view>
+	</block>
+	<block wx:else>
+		<view class="content" wx:for="{{answerList}}" wx:key="index">
+			<towxml nodes="{{item.content}}"/>
+		</view>
+		<view class="operate">
+			<van-icon name="like-o" color="#fff" size="28" />
+			<van-icon name="star-o" color="#fff" size="28" />
+			<van-icon name="comment-o" color="#fff"  size="28" bindtap="onCommitClick" />
+			<van-icon name="share-o"  color="#fff"  size="28" />
+		</view>
+	</block>
+	<van-popup
+		show="{{ isShow }}"
+		round
+		closeable
+		position="bottom"
+		bind:close="onClose"
+	>
+		<view class="commit-title">
+			<block wx:if="{{commitList.length}}">{{commitList.length}}条评论</block>
+			<block wx:else>暂无评论</block>
+		</view>
+		<view class="commit-content" style="min-height: 400rpx;">
+			<block wx:if="{{commitList.length}}">
+				这里是品论
+			</block>
+			<block>
+				<van-empty description="暂无评论" />
+			</block>
+		</view>
+		<view class="commit-input">
+			<textarea class="weui-input" confirm-type="send" auto-height="true" auto-focus placeholder="请写下您的评论"/>
+		</view>
+	</van-popup>
 </view>

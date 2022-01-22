@@ -1,5 +1,7 @@
 // index.js
 // const app = getApp()
+const request = require('../../assets/api/request')
+const url = require('../../assets/api/url')
 
 Page({
 	data: {
@@ -17,90 +19,93 @@ Page({
 		],
 		gridList: [
 			{
-				id: 0,
+				id: 22,
 				name: 'JavaSrcipt基础',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/1.png'
 			},
 			{
-				id: 1,
+				id: 23,
 				name: 'HTML与CSS',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/2.png'
 			},
 			{
-				id: 2,
+				id: 24,
 				name: 'Vue',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/3.png'
 			},
 			{
-				id: 3,
+				id: 25,
 				name: 'React',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/4.png'
 			},
 			{
-				id: 4,
+				id: 26,
 				name: 'Angular',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/5.png'
 			},
 			{
-				id: 5,
+				id: 27,
 				name: '算法',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/6.png'
 			},
 			{
-				id: 6,
+				id: 28,
 				name: '前端工程化',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/7.png'
 			},
 			{
-				id: 7,
+				id: 29,
 				name: 'HTTP与前端安全',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/8.png'
 			},
 			{
-				id: 8,
+				id: 30,
 				name: '微信与小程序相关',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/9.png'
 			},
 			{
-				id: 9,
+				id: 31,
 				name: '前端状态管理',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/10.png'
 			},
 			{
-				id: 10,
+				id: 32,
 				name: '性能优化',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/11.png'
 			},
 			{
-				id: 11,
+				id: 33,
 				name: '工具开发与使用',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/12.png'
 			},
 			{
-				id: 12,
+				id: 34,
 				name: '实战与Coding',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/13.png'
 			},
 			{
-				id: 13,
+				id: 35,
 				name: 'HR与工资',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/14.png'
 			},
 			{
-				id: 14,
+				id: 36,
 				name: '其他',
-				src: '../../assets/images/web.jpeg'
+				src: '../../assets/images/15.png'
 			}
 		]
 	},
 	onLoad (options) {
+		request(url.getStudyModuleList).then(res => {
+			console.log(res)
+		})
 	},
 	onShow () {
 		wx.showTabBar();
 	},
 	onGridClick (grid) {
 		wx.navigateTo({
-		  url: `/pages/list/index?type=${grid.target.dataset.id}`,
+		  url: `/pages/list/index?moduleId=${grid.target.dataset.id}`,
 		})
 	}
 });

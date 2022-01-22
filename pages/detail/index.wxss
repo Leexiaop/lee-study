@@ -1,1 +1,42 @@
 /**index.wxss**/
+page {
+    background-color: #000;
+}
+.loading {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.operate {
+    width: 88rpx;
+    height: 288rpx;
+    position: fixed;
+    right: 0;
+    bottom: 128rpx;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.commit-title {
+    height: 88rpx;
+    line-height: 88rpx;
+    color: #999;
+    font-size: 28rpx;
+    text-align: center;
+}
+.commit-input {
+    border-top: 1px solid #999;
+}
+textarea {
+    width: 686rpx;
+    margin: 16rpx auto;
+    padding: 16rpx 32rpx;
+    box-sizing: border-box;
+    min-height: 88rpx;
+    border-radius: 48rpx;
+    background-color: #eee;
+    color: #666;
+    font-size: 28rpx;
+}

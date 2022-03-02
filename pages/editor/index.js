@@ -25,7 +25,7 @@ Page({
 	},
 	onLoad () {
 		wx.hideTabBar();
-		request(url.getStudyModuleList).then(res => {
+		request(url.getModuleList).then(res => {
 			this.setData({moduleList: res})
 		})
 	},
@@ -66,7 +66,7 @@ Page({
 			});
 			return;
 		}
-		request(url.question, this.data.form, 'post').then(res => {
+		request(url.questionList, this.data.form, 'post').then(res => {
 			this.onBackClick()
 			this.setData({form: {
 					moduleId: '',

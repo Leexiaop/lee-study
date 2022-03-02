@@ -14,9 +14,17 @@
             "list": [
                 {
                     "name": "",
-                    "pathName": "pages/login/index",
+                    "pathName": "pages/index/index",
                     "query": "",
+                    "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/center/index",
+                    "query": "",
+                    "scene": null,
+                    "launchMode": "default"
                 }
             ]
         }

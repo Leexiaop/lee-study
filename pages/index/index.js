@@ -96,16 +96,17 @@ Page({
 		]
 	},
 	onLoad (options) {
-		request(url.getStudyModuleList).then(res => {
-			console.log(res)
-		})
+		// request(url.getModuleList).then(res => {
+		// 	console.log(res)
+		// 	this.setData({gridList: res});
+		// })
 	},
 	onShow () {
 		wx.showTabBar();
 	},
 	onGridClick (grid) {
 		wx.navigateTo({
-		  url: `/pages/list/index?moduleId=${grid.target.dataset.id}`,
+		  	url: `/pages/list/index?moduleId=${grid.target.dataset.id}`,
 		})
 	}
 });

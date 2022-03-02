@@ -8,13 +8,12 @@ Page({
 		questionList: []
 	},
 	onLoad (options) {
-		request(url.getStudyModuleList).then(res => {
+		if (!options.moduleId) return;
+		request(url.questionList, { moduleId: options.moduleId }).then(data => {
 			wx.setNavigationBarTitle({
-				title: res?.find(r => r.id == options.moduleId).name,
-		  	})
-			return request(url.question, { moduleId: options.moduleId })
-		}).then(data => {
-			this.setData({questionList: data})
+				title: data.moduleName,
+		  	});
+			this.setData({questionList: data.list})
 		})
 	},
 	onItemClick (obj) {

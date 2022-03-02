@@ -1,6 +1,11 @@
 <!--index.wxml-->
 <view class="container">
-	<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}" indicator-active-color="#fff">
+	<van-notice-bar
+		class="notice"
+		left-icon="volume-o"
+		text="走了那么多路，看了那么多书，敲了成千上万行代码，却总觉得还少看一道题..."
+	/>
+	<!-- <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}" indicator-active-color="#fff">
         <block wx:for="{{bannerList}}" wx:key="*this">
           <swiper-item>
             <view class="swiper-item">
@@ -12,7 +17,7 @@
 			</view>
           </swiper-item>
         </block>
-    </swiper>
+    </swiper> -->
 	<van-grid column-num="3" square>
 		<block wx:for="{{gridList}}" wx:key="index" wx:for-item="item">
 			<van-grid-item use-slot bind:click="onGridClick" data-id="{{item.id}}">

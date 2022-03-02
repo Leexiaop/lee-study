@@ -4,43 +4,43 @@ const request = require('../../assets/api/request')
 const url = require('../../assets/api/url')
 Page({
 	data: {
-		question: {},
-		answerList: [],
+		answer: [],
 		isLoading: true,
-		isShow: false,
+		isCommitShow: false,
+		isShareShow: false,
+		shareOptions: [
+			{ name: '微信', icon: 'wechat', openType: 'share' },
+			{ name: '微博', icon: 'weibo' },
+			{ name: '复制链接', icon: 'link' },
+			{ name: '分享海报', icon: 'poster' },
+			{ name: '二维码', icon: 'qrcode' },
+		],
 		commitList: []
 	},
 	onLoad(options) {
-		request(`${url.getQuestionDetail}/${options.questionId}`).then(res => {
-			wx.setNavigationBarTitle({
-				title: res.question,
-			  })
-			  this.setData({question: res})
-			return request(url.getAnswerList, { questionId: options.questionId})
-		}).then(res => {
-			let data = res.map(item => {
-				return {
-					content: app.towxml(item.answer,'markdown', {
-						theme: 'dark'
-					})
-				}
-			})
-			this.setData({answerList: data})
-			this.setData({isLoading: false})
-		})
+		request(url.getAnswer, { questionId: options.questionId}).then(res => {
+			if (res) {
+				res.content = app.towxml(res.answer,'markdown', {
+					theme: 'dark'
+				});
+				this.setData({answer: res, isLoading: false});
+			};
+		});
 	},
 	onCommitClick () {
-		this.setData({isShow: true})
+		this.setData({isCommitShow: true})
 	},
 	onClose () {
-		this.setData({isShow: false})
+		this.setData({isCommitShow: false})
 	},
 	onShareAppMessage() {
 		return {
-			title: question.question,
+			title: 'dddd',
 			path: '/pages/detail/index',
 			imageUrl: '/assets/images'
 		}
 	},
-	showShareMenu () {}
+	onShareClick () {
+		this.setData({isShareShow: true})
+	} 
 });

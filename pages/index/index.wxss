@@ -2,28 +2,9 @@
 van-grid {
 	width: 100%;
 }
-swiper {
-	width: 100%;
-}
-swiper-item {
-	position: relative;
-}
-.swiper-content {
-	position: absolute;
-	bottom: 48rpx;
-	left: 24rpx;
-}
-.swiper-content > .title {
-	color: #fff;
-	font-size: 32rpx;
-	margin-bottom: 8rpx;
-}
-.swiper-content > .tip {
-	color: green;
-	font-size: 28rpx;
-}
 .grid-name {
 	margin-top: 16rpx;
-	font-size: 26rpx;
+    font-size: 26rpx;
+    text-align: center;
 	color: gray;
 }

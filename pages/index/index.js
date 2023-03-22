@@ -5,108 +5,211 @@ const url = require('../../assets/api/url')
 
 Page({
 	data: {
-		bannerList: [
-			{
-				title: '难说再见',
-				tip: '回看马上过去的2021，有太多的不舍',
-				src: '../../assets/images/2021.jpeg'
-			},
-			{
-				title: '满心期待',
-				tip: '展望即将到来的2022，期待总是让人激动不已',
-				src: '../../assets/images/2021.jpeg'
-			}
-		],
-		gridList: [
-			{
-				id: 22,
-				name: 'JavaSrcipt基础',
-				src: '../../assets/images/1.png'
-			},
-			{
-				id: 23,
-				name: 'HTML与CSS',
-				src: '../../assets/images/2.png'
-			},
-			{
-				id: 24,
-				name: 'Vue',
-				src: '../../assets/images/3.png'
-			},
-			{
-				id: 25,
-				name: 'React',
-				src: '../../assets/images/4.png'
-			},
-			{
-				id: 26,
-				name: 'Angular',
-				src: '../../assets/images/5.png'
-			},
-			{
-				id: 27,
-				name: '算法',
-				src: '../../assets/images/6.png'
-			},
-			{
-				id: 28,
-				name: '前端工程化',
-				src: '../../assets/images/7.png'
-			},
-			{
-				id: 29,
-				name: 'HTTP与前端安全',
-				src: '../../assets/images/8.png'
-			},
-			{
-				id: 30,
-				name: '微信与小程序相关',
-				src: '../../assets/images/9.png'
-			},
-			{
-				id: 31,
-				name: '前端状态管理',
-				src: '../../assets/images/10.png'
-			},
-			{
-				id: 32,
-				name: '性能优化',
-				src: '../../assets/images/11.png'
-			},
-			{
-				id: 33,
-				name: '工具开发与使用',
-				src: '../../assets/images/12.png'
-			},
-			{
-				id: 34,
-				name: '实战与Coding',
-				src: '../../assets/images/13.png'
-			},
-			{
-				id: 35,
-				name: 'HR与工资',
-				src: '../../assets/images/14.png'
-			},
-			{
-				id: 36,
-				name: '其他',
-				src: '../../assets/images/15.png'
-			}
-		]
+        activeKey: 0,
+        asideList: [
+            {
+                title: '前端面试',
+                children: [
+                    {
+                        id: 22,
+                        name: 'JavaSrcipt'
+                    },
+                    {
+                        id: 23,
+                        name: 'HTML与CSS'
+                    },
+                    {
+                        id: 24,
+                        name: 'Vue'
+                    },
+                    {
+                        id: 25,
+                        name: 'React'
+                    },
+                    {
+                        id: 26,
+                        name: 'Angular'
+                    },
+                    {
+                        id: 27,
+                        name: '算法'
+                    },
+                    {
+                        id: 28,
+                        name: '前端工程化'
+                    },
+                    {
+                        id: 29,
+                        name: 'HTTP与安全'
+                    },
+                    {
+                        id: 30,
+                        name: '微信与小程序'
+                    },
+                    {
+                        id: 31,
+                        name: '状态管理'
+                    },
+                    {
+                        id: 32,
+                        name: '性能优化'
+                    },
+                    {
+                        id: 33,
+                        name: '工具开发与使用'
+                    },
+                    {
+                        id: 34,
+                        name: '实战与Coding'
+                    },
+                    {
+                        id: 35,
+                        name: 'HR与工资'
+                    },
+                    {
+                        id: 36,
+                        name: '其他'
+                    }
+                ]
+            },
+            {
+                title: '渲染相关',
+                children: [
+                    {
+                        id: 1,
+                        name: 'webGL'
+                    },
+                    {
+                        id: 2,
+                        name: 'webGPU'
+                    },
+                    {
+                        id: 3,
+                        name: 'OpenGL'
+                    },
+                    {
+                        id: 4,
+                        name: 'ThreeJS'
+                    },
+                    {
+                        id: 5,
+                        name: 'cesiumJS'
+                    },
+                    {
+                        id: 6,
+                        name: '着色器原理'
+                    },
+                    {
+                        id: 7,
+                        name: 'Blender建模'
+                    },
+                    {
+                        id: 8,
+                        name: 'ThreeJS案例'
+                    }
+                ]
+            },
+            {
+                title: '源码分析',
+                children: [
+                    {
+                        id: 8,
+                        name: 'VUE2.x'
+                    },
+                    {
+                        id: 9,
+                        name: 'VUE3.x'
+                    },
+                    {
+                        id: 10,
+                        name: 'React'
+                    },
+                    {
+                        id: 11,
+                        name: 'Lodash'
+                    }
+                ]
+            },
+            {
+                title: '服务和部署',
+                children: [
+                    {
+                        id: 12,
+                        name: 'go语言'
+                    },
+                    {
+                        id: 13,
+                        name: '数据库'
+                    },
+                    {
+                        id: 14,
+                        name: '前端项目部署'
+                    },
+                    {
+                        id: 14,
+                        name: 'go项目部署'
+                    },
+                    {
+                        id: 15,
+                        name: 'k8s'
+                    },
+                    {
+                        id: 16,
+                        name: 'Docker'
+                    }
+                ]
+            },
+            {
+                title: '地图相关',
+                children: [
+                    {
+                        id: 17,
+                        name: 'Gis'
+                    },
+                    {
+                        id: 18,
+                        name: 'OpenLayers'
+                    },
+                    {
+                        id: 19,
+                        name: 'LeafletJS'
+                    },
+                    {
+                        id: 20,
+                        name: 'MapServer'
+                    },
+                    {
+                        id: 21,
+                        name: 'MapProxy'
+                    },
+                    {
+                        id: 37,
+                        name: '国内地图接口'
+                    }
+                ]
+            }
+        ],
+        grideList: []
 	},
 	onLoad (options) {
 		// request(url.getModuleList).then(res => {
 		// 	console.log(res)
 		// 	this.setData({gridList: res});
-		// })
+        // })
+        this.setData({grideList: this.data.asideList[this.data.activeKey].children})
 	},
 	onShow () {
-		wx.showTabBar();
+
 	},
 	onGridClick (grid) {
 		wx.navigateTo({
-		  	url: `/pages/list/index?moduleId=${grid.target.dataset.id}`,
+		  	url: `/mainPackage/pages/list/index?moduleId=${grid.target.dataset.id}`,
 		})
-	}
+    },
+    onSideBarClick (item) {
+        this.setData({
+            activeKey: item.detail,
+            grideList: this.data.asideList[item.detail].children
+        })
+    }
 });

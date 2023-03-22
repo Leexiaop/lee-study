@@ -5,25 +5,26 @@
 		left-icon="volume-o"
 		text="走了那么多路，看了那么多书，敲了成千上万行代码，却总觉得还少看一道题..."
 	/>
-	<!-- <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}" indicator-active-color="#fff">
-        <block wx:for="{{bannerList}}" wx:key="*this">
-          <swiper-item>
-            <view class="swiper-item">
-				<image src="{{item.src}}" style="width: 100%;"/>
-				<view class="swiper-content">
-					<view class="title">{{item.title}}</view>
-					<view class="tip">{{item.tip}}</view>
-				</view>
-			</view>
-          </swiper-item>
-        </block>
-    </swiper> -->
-	<van-grid column-num="3" square>
-		<block wx:for="{{gridList}}" wx:key="index" wx:for-item="item">
-			<van-grid-item use-slot bind:click="onGridClick" data-id="{{item.id}}">
-				<image mode="aspectFit" style="width: 100%;" src="{{item.src}}"/>
-				<!-- <view class="grid-name">{{item.name}}</view> -->
-			</van-grid-item>
-		</block>
-	</van-grid>
+    <van-row>
+        <van-col span="6">
+            <van-sidebar active-key="{{ activeKey }}" bind:change="onSideBarClick">
+                <van-sidebar-item
+                    wx:for="{{asideList}}"
+                    wx:key="index"
+                    wx:for-item="aside"
+                    title="{{aside.title}}"
+                    badge="{{index !== activeKey ? aside.children.length : ''}}"
+                />
+            </van-sidebar>
+        </van-col>
+        <van-col span="18">
+            <van-grid column-num="3" square>
+                <block wx:for="{{grideList}}" wx:key="index" wx:for-item="item">
+                    <van-grid-item use-slot bind:click="onGridClick" data-id="{{item.id}}">
+                        <view class="grid-name">{{item.name}}</view>
+                    </van-grid-item>
+                </block>
+            </van-grid>
+        </van-col>
+    </van-row>
 </view>

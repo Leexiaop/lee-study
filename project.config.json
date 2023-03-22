@@ -3,10 +3,11 @@
     "packOptions": {
         "ignore": [
             {
-                "type": "file",
-                "value": ".eslintrc.js"
+                "value": ".eslintrc.js",
+                "type": "file"
             }
-        ]
+        ],
+        "include": []
     },
     "setting": {
         "urlCheck": false,
@@ -55,15 +56,6 @@
     "libVersion": "2.21.3",
     "appid": "wx469ce1a6458d34fc",
     "projectname": "lee-study",
-    "debugOptions": {
-        "hidedInDevtools": []
-    },
-    "scripts": {},
-    "staticServerOptions": {
-        "baseURL": "",
-        "servePath": ""
-    },
-    "isGameTourist": false,
     "condition": {
         "search": {
             "list": []
@@ -83,5 +75,9 @@
         "miniprogram": {
             "list": []
         }
+    },
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
     }
 }

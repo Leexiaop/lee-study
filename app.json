@@ -1,36 +1,58 @@
 {
-	"pages":[
-		"pages/index/index",
-		"pages/list/index",
-		"pages/center/index",
-		"pages/editor/index",
-		"pages/detail/index",
-		"pages/login/index"
-	],
-	"window":{
-		"backgroundColor": "#F6F6F6",
-		"backgroundTextStyle": "light",
-		"navigationBarBackgroundColor": "#000",
-		"navigationBarTitleText": "前端练功房",
-		"navigationBarTextStyle": "white"
-	},
-	"tabBar": {
-		"color": "#8a8a8a",
-		"selectedColor": "#fff",
-		"backgroundColor": "#000",
-		"list": [{
-			"pagePath": "pages/index/index",
-			"text": "首页",
-			"iconPath": "./assets/images/home.png",
-			"selectedIconPath": "./assets/images/home_selected.png"
-		},
-		{
-			"pagePath": "pages/center/index",
-			"text": "个人中心",
-			"iconPath": "./assets/images/center.png",
-			"selectedIconPath": "./assets/images/center_selected.png"
-		}]
-	},
-	"style": "v2",
-	"sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index/index",
+        "pages/center/index",
+        "pages/login/index"
+    ],
+    "subpackages": [
+        {
+            "root": "mainPackage",
+            "pages": [
+                "pages/detail/index",
+                "pages/editor/index",
+                "pages/list/index"
+            ]
+        },
+        {
+            "root": "renderPackage",
+            "pages": [
+                "pages/demo/index"
+            ]
+        },
+        {
+            "root": "platformPackage",
+            "pages": [
+                "pages/platform/index"
+            ],
+            "independent": true
+        }
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#000",
+        "navigationBarTitleText": "前端练功房",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#8a8a8a",
+        "selectedColor": "#fff",
+        "backgroundColor": "#000",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "./assets/images/home.png",
+                "selectedIconPath": "./assets/images/home_selected.png"
+            },
+            {
+                "pagePath": "pages/center/index",
+                "text": "个人中心",
+                "iconPath": "./assets/images/center.png",
+                "selectedIconPath": "./assets/images/center_selected.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
 }

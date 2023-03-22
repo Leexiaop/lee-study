@@ -4,8 +4,8 @@
 App({
 	towxml:require('/towxml/index'),
 	onLaunch() {
-		this.globalData.userInfo = wx.getStorageSync('userInfo');
-		this.globalData.hasUserInfo = !!wx.getStorageSync('hasUserInfo');
+		this.globalData.userInfo = wx.getStorageSync('userInfo')
+		this.globalData.hasUserInfo = !!wx.getStorageSync('hasUserInfo')
 	},
 	globalData: {
 		userInfo: null,

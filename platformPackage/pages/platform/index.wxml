@@ -1,0 +1,19 @@
+<!--pages/platform/index.wxml-->
+<view>
+    <van-row>
+        <van-col span="6">
+            <van-sidebar active-key="{{ activeKey }}" bind:change="onSideBarClick">
+                <van-sidebar-item
+                    wx:for="{{asideList}}"
+                    wx:key="index"
+                    wx:for-item="aside"
+                    title="{{aside}}"
+                />
+            </van-sidebar>
+        </van-col>
+        <van-col span="18">
+            <menu-manage wx:if="{{activeKey === 0}}" />
+            <module-manage wx:elif="{{activeKey === 1}}" />
+        </van-col>
+    </van-row>
+</view>

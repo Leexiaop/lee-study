@@ -23,8 +23,14 @@ Page({
 		})
 	},
 	onItemClick (e) {
+        if (e.target.dataset.type === '6') {
+            wx.navigateTo({
+                url: '/platformPackage/pages/platform/index',
+            })
+            return
+        }
 		wx.navigateTo({
-		  	url: `/pages/list/index?type=${e.target.dataset.type}`,
+		  	url: `/mainPackage/pages/list/index?type=${e.target.dataset.type}`,
 		})
 	}
 });

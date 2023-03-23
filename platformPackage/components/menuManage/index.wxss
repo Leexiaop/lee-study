@@ -1,5 +1,5 @@
 /* platformPackage/component/menuManage/index.wxss */
 .menu {
     height: 100vh;
-    padding: 24rpx 0;
+    overflow: auto;
 }

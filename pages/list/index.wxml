@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="list">
-    <table-list
+    <list-cell
         list="{{questionList}}"
         isLink="{{true}}"
         bind:onItemClick="onItemClick"

@@ -15,7 +15,14 @@ Page({
 		//   	});
 		// 	this.setData({questionList: data.list})
 		// })
-	},
+    },
+    onShareAppMessage() {
+        return {
+            title: '前端练功房',
+            path: '/pages/index/index',
+            imageUrl: '/assets/images/logo.png'
+        }
+    },
 	onItemClick (obj) {
 		wx.navigateTo({
 		  	url: `/pages/detail/index?questionId=${obj.detail.id}`,

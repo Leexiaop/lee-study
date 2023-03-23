@@ -5,6 +5,7 @@
         "van-row": "@vant/weapp/row/index",
         "van-col": "@vant/weapp/col/index",
         "van-dialog": "@vant/weapp/dialog/index",
-        "table-list": "/components/tableList/index"
+        "list-cell": "/components/listCell/index",
+        "van-field": "@vant/weapp/field/index"
     }
 }

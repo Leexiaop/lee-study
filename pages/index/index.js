@@ -194,7 +194,7 @@ Page({
                 ]
             }
         ],
-        grideList: []
+        grideList: []    
 	},
 	onLoad (options) {
 		// request(url.getModuleList).then(res => {
@@ -202,10 +202,17 @@ Page({
 		// 	this.setData({gridList: res});
         // })
         this.setData({grideList: this.data.asideList[this.data.activeKey].children})
-	},
+    },          
 	onShow () {
 
-	},
+    },
+    onShareAppMessage() {
+        return {
+            title: '前端练功房',
+            path: '/pages/index/index',
+            imageUrl: '/assets/images/logo.png'
+        }
+    },
 	onGridClick (grid) {
 		wx.navigateTo({
 		  	url: `/pages/list/index?moduleId=${grid.target.dataset.id}`,

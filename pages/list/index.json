@@ -1,5 +1,5 @@
 {
     "usingComponents": {
-        "table-list": "/components/tableList/index"
+        "list-cell": "/components/listCell/index"
     }
 }

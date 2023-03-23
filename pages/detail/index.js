@@ -33,13 +33,13 @@ Page({
 	onClose () {
 		this.setData({isCommitShow: false})
 	},
-	onShareAppMessage() {
-		return {
-			title: 'dddd',
-			path: '/pages/detail/index',
-			imageUrl: '/assets/images'
-		}
-	},
+    onShareAppMessage() {
+        return {
+            title: '前端练功房',
+            path: '/pages/index/index',
+            imageUrl: '/assets/images/logo.png'
+        }
+    },
 	onShareClick () {
 		this.setData({isShareShow: true})
 	} 

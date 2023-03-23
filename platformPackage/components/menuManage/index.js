@@ -19,6 +19,7 @@ Component({
      */
     methods: {
         onMenuAdd() {
+            console.log(333)
             this.setData({show: true})
         },
         onItemOperate(e) {

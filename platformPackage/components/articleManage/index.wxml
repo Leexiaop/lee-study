@@ -1,12 +1,12 @@
 <!--platformPackage/component/articleManage/index.wxml-->
 <view class="article">
-    <van-row>
+    <van-row style="padding: 24rpx;">
         <van-col span="4" offset="16">
             <van-button type="info" bind:click="onArticleAdd" custom-style="width: 48rpx" size="mini">新建</van-button>
         </van-col>
     </van-row>
     <text>\n</text>
-    <table-list
+    <list-cell
         list="{{[{id: 1,title: '大dadadaa大'}]}}"
         leftText="删除"
         rightText="编辑"

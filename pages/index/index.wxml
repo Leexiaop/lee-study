@@ -5,26 +5,21 @@
 		left-icon="volume-o"
 		text="走了那么多路，看了那么多书，敲了成千上万行代码，却总觉得还少看一道题..."
 	/>
-    <van-row>
-        <van-col span="6">
-            <van-sidebar active-key="{{ activeKey }}" bind:change="onSideBarClick">
-                <van-sidebar-item
-                    wx:for="{{asideList}}"
-                    wx:key="index"
-                    wx:for-item="aside"
-                    title="{{aside.title}}"
-                    badge="{{index !== activeKey ? aside.children.length : ''}}"
-                />
-            </van-sidebar>
-        </van-col>
-        <van-col span="18">
-            <van-grid column-num="3" square>
+    <van-tree-select
+        items="{{ asideList }}"
+        height="100vh"
+        main-active-index="{{ activeKey }}"
+        bind:click-nav="onNavClick"
+    >
+        <view slot="content">
+            <van-grid column-num="3" square wx:if="{{grideList.length}}">
                 <block wx:for="{{grideList}}" wx:key="index" wx:for-item="item">
                     <van-grid-item use-slot bind:click="onGridClick" data-id="{{item.id}}">
                         <view class="grid-name">{{item.name}}</view>
                     </van-grid-item>
                 </block>
             </van-grid>
-        </van-col>
-    </van-row>
+            <van-empty description="暂无数据" wx:else />
+        </view>
+    </van-tree-select>
 </view>

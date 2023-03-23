@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-button": "@vant/weapp/button/index",
+        "van-row": "@vant/weapp/row/index",
+        "van-col": "@vant/weapp/col/index",
+        "van-dialog": "@vant/weapp/dialog/index",
+        "table-list": "/components/tableList/index"
+    }
+}

@@ -1,8 +1,6 @@
 // renderPackage/pages/demo/index.js
-// const THREE = require('../../../libs/three.weapp.js')
-// const { OrbitControls } =  require('../../../jsm/controls/OrbitControls.js')
-import * as THREE from '../../../libs/three.weapp.js'
-import { OrbitControls } from '../../../jsm/controls/OrbitControls.js'
+ const THREE = require('../../../utils/threejs/three.weapp.js')
+ const {OrbitControls} = require('../../../utils/threejs/controls/OrbitControls.js')
 
 Page({
 

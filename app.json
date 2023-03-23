@@ -2,17 +2,11 @@
     "pages": [
         "pages/index/index",
         "pages/center/index",
+        "pages/detail/index",
+        "pages/list/index",
         "pages/login/index"
     ],
     "subpackages": [
-        {
-            "root": "mainPackage",
-            "pages": [
-                "pages/detail/index",
-                "pages/editor/index",
-                "pages/list/index"
-            ]
-        },
         {
             "root": "renderPackage",
             "pages": [
@@ -22,7 +16,8 @@
         {
             "root": "platformPackage",
             "pages": [
-                "pages/platform/index"
+                "pages/manage/index",
+                "pages/monitor/index"
             ],
             "independent": true
         }

@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "van-tree-select": "@vant/weapp/tree-select/index",
+        "menu-manage": "../../components/menuManage/index",
+        "module-manage": "../../components/moduleManage/index",
+        "article-manage": "../../components/articleManage/index"
+    }
+}

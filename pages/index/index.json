@@ -3,9 +3,7 @@
         "van-grid": "@vant/weapp/grid/index",
         "van-grid-item": "@vant/weapp/grid-item/index",
         "van-notice-bar": "@vant/weapp/notice-bar/index",
-        "van-sidebar": "@vant/weapp/sidebar/index",
-        "van-sidebar-item": "@vant/weapp/sidebar-item/index",
-        "van-row": "@vant/weapp/row/index",
-        "van-col": "@vant/weapp/col/index"
+        "van-tree-select": "@vant/weapp/tree-select/index",
+        "van-empty": "@vant/weapp/empty/index"
     }
 }

@@ -1,0 +1,14 @@
+<view class="menu">
+    <van-row>
+        <van-col span="4" offset="16">
+            <van-button type="info" bind:click="onMenuAdd" custom-style="width: 48rpx" size="mini">新建</van-button>
+        </van-col>
+    </van-row>
+    <text>\n</text>
+    <table-list
+        list="{{[{id: 1,title: 'dsadasdas'}]}}"
+        leftText="删除"
+        rightText="编辑"
+        bind:onItemOperate="onItemOperate"
+    />
+</view>

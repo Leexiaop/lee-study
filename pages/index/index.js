@@ -8,7 +8,8 @@ Page({
         activeKey: 0,
         asideList: [
             {
-                title: '前端面试',
+                text: '前端面试',
+                activeId: 1,
                 children: [
                     {
                         id: 22,
@@ -73,7 +74,8 @@ Page({
                 ]
             },
             {
-                title: '渲染相关',
+                text: '渲染相关',
+                activeId: 2,
                 children: [
                     {
                         id: 1,
@@ -110,7 +112,8 @@ Page({
                 ]
             },
             {
-                title: '源码分析',
+                text: '源码分析',
+                activeId: 3,
                 children: [
                     {
                         id: 8,
@@ -131,7 +134,8 @@ Page({
                 ]
             },
             {
-                title: '服务和部署',
+                text: '服务和部署',
+                activeId: 4,
                 children: [
                     {
                         id: 12,
@@ -160,7 +164,8 @@ Page({
                 ]
             },
             {
-                title: '地图相关',
+                text: '地图相关',
+                activeId: 5,
                 children: [
                     {
                         id: 17,
@@ -203,13 +208,13 @@ Page({
 	},
 	onGridClick (grid) {
 		wx.navigateTo({
-		  	url: `/mainPackage/pages/list/index?moduleId=${grid.target.dataset.id}`,
+		  	url: `/pages/list/index?moduleId=${grid.target.dataset.id}`,
 		})
     },
-    onSideBarClick (item) {
+    onNavClick (item) {
         this.setData({
-            activeKey: item.detail,
-            grideList: this.data.asideList[item.detail].children
+            activeKey: item.detail.index,
+            grideList: this.data.asideList[item.detail.index].children
         })
     }
 });

@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="list">
+    <table-list
+        list="{{questionList}}"
+        isLink="{{true}}"
+        bind:onItemClick="onItemClick"
+    />
+</view>

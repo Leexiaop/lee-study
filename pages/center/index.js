@@ -23,14 +23,26 @@ Page({
 		})
 	},
 	onItemClick (e) {
+        if (e.target.dataset.type === '4') {
+            wx.navigateTo({
+                url: '/platformPackage/pages/manage/index',
+            })
+            return
+        }
+        if (e.target.dataset.type === '5') {
+            wx.navigateTo({
+                url: '/platformPackage/pages/monitor/index',
+            })
+            return
+        }
         if (e.target.dataset.type === '6') {
             wx.navigateTo({
-                url: '/platformPackage/pages/platform/index',
+                url: '/renderPackage/pages/demo/index',
             })
             return
         }
 		wx.navigateTo({
-		  	url: `/mainPackage/pages/list/index?type=${e.target.dataset.type}`,
+		  	url: `/pages/list/index?type=${e.target.dataset.type}`,
 		})
 	}
 });

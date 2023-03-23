@@ -1,0 +1,15 @@
+<!--platformPackage/pages/monitor/index.wxml-->
+<view class="monitor">
+    <van-tree-select
+        items="{{ asideList }}"
+        height="100vh"
+        main-active-index="{{ activeKey }}"
+        bind:click-nav="onNavClick"
+    >
+        <view slot="content">
+            <menu-manage wx:if="{{activeKey === 0}}" />
+            <module-manage wx:elif="{{activeKey === 1}}" />
+            <article-manage wx:elif="{{activeKey === 2}}" />
+        </view>
+    </van-tree-select>
+</view>

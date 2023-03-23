@@ -1,0 +1,5 @@
+/* platformPackage/component/moduleManage/index.wxss */
+.module {
+    height: 100vh;
+    padding: 24rpx 0;
+}

@@ -18,6 +18,10 @@ Page({
 		commitList: []
 	},
 	onLoad(options) {
+        wx.showShareMenu({
+            withShareTicket: true,
+            menus: ['shareAppMessage', 'shareTimeline']
+        })
 		request(url.getAnswer, { questionId: options.questionId}).then(res => {
 			if (res) {
 				res.content = app.towxml(res.answer,'markdown', {

@@ -7,6 +7,7 @@ Page({
 		hasUserInfo: false
 	},
 	onLoad () {
+
 	},
 	onShow () {
 		wx.setNavigationBarTitle({

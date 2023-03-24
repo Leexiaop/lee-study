@@ -8,6 +8,10 @@ Page({
 		questionList: [{title: '33333', id: 2}]
 	},
 	onLoad (options) {
+        wx.showShareMenu({
+            withShareTicket: true,
+            menus: ['shareAppMessage', 'shareTimeline']
+        })
 		if (!options.moduleId) return;
 		// request(url.questionList, { moduleId: options.moduleId }).then(data => {
 		// 	wx.setNavigationBarTitle({

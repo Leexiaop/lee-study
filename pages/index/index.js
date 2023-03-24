@@ -202,6 +202,10 @@ Page({
 		// 	this.setData({gridList: res});
         // })
         this.setData({grideList: this.data.asideList[this.data.activeKey].children})
+        wx.showShareMenu({
+            withShareTicket: true,
+            menus: ['shareAppMessage', 'shareTimeline']
+        })
     },          
 	onShow () {
 

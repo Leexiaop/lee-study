@@ -1,48 +1,11 @@
 <!--index.wxml-->
-<view class="container">
-	<!-- <view class="title">{{question.question}}</view> -->
+<view class="detail">
 	<block wx:if="{{isLoading}}">
 		<view class="loading">
 			<van-loading type="spinner" color="#fff" />
 		</view>
 	</block>
 	<block wx:else>
-		<towxml nodes="{{answer.content}}"/>
-		<!-- <view class="operate">
-			<van-icon name="like-o" color="#fff" size="28" />
-			<van-icon name="star-o" color="#fff" size="28" />
-			<van-icon name="comment-o" color="#fff"  size="28" bindtap="onCommitClick" />
-			<van-icon name="share-o"  color="#fff"  size="28" bindtap="onShareClick" />
-		</view> -->
+		<towxml nodes="{{answer}}"/>
 	</block>
-	<van-popup
-		show="{{ isCommitShow }}"
-		round
-		closeable
-		position="bottom"
-		bind:close="onClose"
-	>
-		<view class="commit-title">
-			<block wx:if="{{commitList.length}}">{{commitList.length}}条评论</block>
-			<block wx:else>暂无评论</block>
-		</view>
-		<view class="commit-content" style="min-height: 400rpx;">
-			<block wx:if="{{commitList.length}}">
-				这里是品论
-			</block>
-			<block>
-				<van-empty description="暂无评论" />
-			</block>
-		</view>
-		<view class="commit-input">
-			<textarea class="weui-input" confirm-type="send" auto-height="true" auto-focus placeholder="请写下您的评论"/>
-		</view>
-	</van-popup>
-	<van-share-sheet
-		show="{{ isShareShow }}"
-		title="立即分享给好友"
-		options="{{ shareOptions }}"
-		bind:select="onSelect"
-		bind:close="onClose"
-	/>
 </view>

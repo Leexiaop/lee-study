@@ -5,20 +5,24 @@ const url = require('../../assets/api/url')
 
 Page({
 	data: {
-		questionList: [{title: '33333', id: 2}]
+        questionList: [],
+        path: ''
 	},
 	onLoad (options) {
         wx.showShareMenu({
             withShareTicket: true,
             menus: ['shareAppMessage', 'shareTimeline']
         })
-		if (!options.moduleId) return;
-		// request(url.questionList, { moduleId: options.moduleId }).then(data => {
-		// 	wx.setNavigationBarTitle({
-		// 		title: data.moduleName,
-		//   	});
-		// 	this.setData({questionList: data.list})
-		// })
+		if (!options.moduleId || !options.menuId) return;
+		request(url.getModuleList, options).then(res => {
+			wx.setNavigationBarTitle({
+				title: res.title
+		  	});
+			this.setData({
+                questionList: res?.list,
+                path: res.path
+            })
+		})
     },
     onShareAppMessage() {
         return {
@@ -29,7 +33,7 @@ Page({
     },
 	onItemClick (obj) {
 		wx.navigateTo({
-		  	url: `/pages/detail/index?questionId=${obj.detail.id}`,
+		  	url: `/pages/detail/index?path=${this.data.path}&title=${obj.detail.title}`,
 		})
 	}
 });

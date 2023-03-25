@@ -13,7 +13,7 @@ module.exports = (url, data = {}, method = 'get') => {
             method: method,
             timeout: 0,
             success: (result) => {
-                const { data } = result.data
+                const { data } = result?.data
                 resolve(data)
             },
             fail: (res) => {

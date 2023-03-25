@@ -22,9 +22,12 @@ Page({
             withShareTicket: true,
             menus: ['shareAppMessage', 'shareTimeline']
         })
-		request(url.getAnswer, { questionId: options.questionId}).then(res => {
+        wx.setNavigationBarTitle({
+            title: options.title
+        })
+		request(url.getArticle, { path: `${options.path}/${options.title}`}).then(res => {
 			if (res) {
-				res.content = app.towxml(res.answer,'markdown', {
+				res = app.towxml(res,'markdown', {
 					theme: 'dark'
 				});
 				this.setData({answer: res, isLoading: false});

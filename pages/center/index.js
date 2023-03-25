@@ -26,17 +26,11 @@ Page({
 	onItemClick (e) {
         if (e.target.dataset.type === '4') {
             wx.navigateTo({
-                url: '/platformPackage/pages/manage/index',
-            })
-            return
-        }
-        if (e.target.dataset.type === '5') {
-            wx.navigateTo({
                 url: '/platformPackage/pages/monitor/index',
             })
             return
         }
-        if (e.target.dataset.type === '6') {
+        if (e.target.dataset.type === '5') {
             wx.navigateTo({
                 url: '/renderPackage/pages/demo/index',
             })

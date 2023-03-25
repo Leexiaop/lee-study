@@ -16,7 +16,6 @@
         {
             "root": "platformPackage",
             "pages": [
-                "pages/manage/index",
                 "pages/monitor/index"
             ],
             "independent": true

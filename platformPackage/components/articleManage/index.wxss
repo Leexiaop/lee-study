@@ -1,5 +1,0 @@
-/* platformPackage/component/articleManage/index.wxss */
-.article {
-    height: 100vh;
-    overflow: auto;
-}

@@ -1,5 +1,0 @@
-/* platformPackage/component/moduleManage/index.wxss */
-.module {
-    height: 100vh;
-    overflow: auto;
-}

@@ -1,5 +1,6 @@
 /**index.wxss**/
 .detail {
+    height: 100vh;
     background-color: #000;
 }
 .loading {

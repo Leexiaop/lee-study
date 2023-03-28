@@ -17,6 +17,11 @@ module.exports = (url, data = {}, method = 'get') => {
                 resolve(data)
             },
             fail: (res) => {
+                console.log(res, 666)
+                wx.showToast({
+                    title: res.errMsg,
+                    icon: 'error'
+                })
                 reject(res)
             }
         })

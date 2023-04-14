@@ -6,7 +6,7 @@
         bind:onItemClick="onItemClick"
     /> -->
     <nav-bar />
-    <view class="title">
+    <view class="title animate__animated animate__rubberBand">
         前端练功房
     </view>
     <van-search
@@ -18,12 +18,12 @@
     />
     <view class="tab-select">
         <view
-            class="tab-select-item {{activeModule === -1 ? 'activeModule' : ''}}"
+            class="tab-select-item {{activeModule === -1 ? 'activeModule' : ''}}  animate__animated {{isIn ? 'animate__rotateIn': 'animate__rotateOut'}}"
             bindtap="onModuleClick"
             data-index="{{-1}}"
         >#全部</view>
         <view
-            class="tab-select-item {{activeModule === module.activeId ? 'activeModule' : ''}}"
+            class="tab-select-item {{activeModule === module.activeId ? 'activeModule' : ''}} animate__animated {{isIn ? 'animate__rotateIn': 'animate__rotateOut'}}"
             wx:for="{{moduleList}}"
             wx:key="activeId"
             wx:for-item="module"

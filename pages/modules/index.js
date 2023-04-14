@@ -22,6 +22,9 @@ Page({
             })
 		})
     },
+    show () {
+        this.setData({isIn: true})
+    },
     onShareAppMessage() {
         return {
             title: '前端练功房',

@@ -1,10 +1,70 @@
 /**index.wxss**/
-van-grid {
-	width: 100%;
+.index {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
 }
-.grid-name {
-	margin-top: 16rpx;
-    font-size: 26rpx;
-    text-align: center;
-	color: gray;
-} 
+
+.index > .banner {
+    width: 100%;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 32rpx;
+    margin-top: 124rpx;
+}
+.index > .banner > .user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.index > .banner > .user > .img{
+    margin: 0 auto;
+}
+.index > .banner > .user > .name{
+    margin: 0 auto;
+}
+.index > .content {
+    width: 100%;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.index > .content > .content-item {
+    width: 622rpx;
+    padding: 32rpx;
+    color: #000;
+    margin-bottom: 32rpx;
+    border-radius: 32rpx;
+}
+.index > .content > .content-item > .content-item-icon {
+    display: flex;
+    justify-content: space-between;
+}
+.index > .content > .content-item > .content-item-icon > .content-item-icon-left {
+    display: flex;
+}
+.index > .content > .content-item > .title {
+    font-size: 46rpx;
+    font-weight: bold;
+}
+.index > .content > .content-item > .tag {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.index > .content > .content-item > .tag > .tag-item {
+    margin-right: 16rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.van-search {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}

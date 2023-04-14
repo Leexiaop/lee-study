@@ -1,0 +1,12 @@
+<!--components/NavBar/index.wxml-->
+<view class="nav-bar" style="height: {{navHeight}}px">
+    <van-image
+        class="img"
+        width="24"
+        height="24"
+        round
+        lazy-load
+        src="{{hasUserInfo ? userInfo.avatarUrl : 'https://img.yzcdn.cn/vant/cat.jpeg'}}"
+    />
+    <view class="name">Mr.Lee</view>
+</view>

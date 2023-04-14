@@ -1,4 +1,11 @@
 /**app.wxss**/
-.container {
+@import './utils/animate.wxss';
+
+page {
     box-sizing: border-box;
+    background-color: #000!important;
+}
+
+::-webkit-scrollbar {
+    width: 0!important;
 }

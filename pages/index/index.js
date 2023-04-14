@@ -2,20 +2,23 @@
 // const app = getApp()
 const request = require('../../assets/api/request')
 const url = require('../../assets/api/url')
+const color = require('../../utils/util')
 
 Page({
 	data: {
-        activeKey: 0,
         asideList: [],
-        grideList: [],
-        menuId: 0
+        isIn: true,
+        navHeight: 0
 	},
-	onLoad (options) {
+	onLoad () {
 		request(url.getMenuList).then(res => {
 			this.setData({
-                asideList: res,
-                grideList: res[this.data.activeKey]?.children,
-                menuId: res[this.data.activeKey]?.activeId
+                asideList: res.map(item => {
+                    return {
+                        ...item,
+                        color: color.color16()
+                    }
+                })
             });
         })
         wx.showShareMenu({
@@ -24,7 +27,7 @@ Page({
         })
     },          
 	onShow () {
-
+        this.setData({isIn: true})
     },
     onShareAppMessage() {
         return {
@@ -34,15 +37,13 @@ Page({
         }
     },
 	onGridClick (grid) {
-		wx.navigateTo({
-		  	url: `/pages/list/index?moduleId=${grid.target.dataset.id}&menuId=${this.data.menuId}`,
-		})
-    },
-    onNavClick (item) {
         this.setData({
-            activeKey: item.detail.index,
-            grideList: this.data.asideList[item.detail.index]?.children,
-            menuId: this.data.asideList[item.detail.index]?.activeId
+            isIn: false
         })
+        setTimeout(() => {
+            wx.navigateTo({
+                url: `/pages/modules/index`,
+          })
+        }, 100)
     }
 });

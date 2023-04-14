@@ -3,7 +3,7 @@
         "pages/index/index",
         "pages/center/index",
         "pages/detail/index",
-        "pages/list/index",
+        "pages/modules/index",
         "pages/login/index",
         "pages/resources/index"
     ],
@@ -23,36 +23,12 @@
         }
     ],
     "window": {
-        "backgroundColor": "#F6F6F6",
+        "backgroundColor": "#000",
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#000",
         "navigationBarTitleText": "前端练功房",
-        "navigationBarTextStyle": "white"
-    },
-    "tabBar": {
-        "color": "#8a8a8a",
-        "selectedColor": "#fff",
-        "backgroundColor": "#000",
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "text": "首页",
-                "iconPath": "./assets/images/home.png",
-                "selectedIconPath": "./assets/images/home_selected.png"
-            },
-            {
-                "pagePath": "pages/resources/index",
-                "text": "资源",
-                "iconPath": "./assets/images/resource.png",
-                "selectedIconPath": "./assets/images/resource_selected.png"
-            },
-            {
-                "pagePath": "pages/center/index",
-                "text": "个人中心",
-                "iconPath": "./assets/images/center.png",
-                "selectedIconPath": "./assets/images/center_selected.png"
-            }
-        ]
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom"
     },
     "style": "v2",
     "sitemapLocation": "sitemap.json"

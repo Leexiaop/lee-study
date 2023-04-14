@@ -5,22 +5,20 @@ const url = require('../../assets/api/url')
 
 Page({
 	data: {
-        questionList: [],
-        path: ''
+        moduleList: [],
+        activeModule: -1,
+        contentList: [],
+        isIn: true
 	},
 	onLoad (options) {
         wx.showShareMenu({
             withShareTicket: true,
             menus: ['shareAppMessage', 'shareTimeline']
         })
-		if (!options.moduleId || !options.menuId) return;
-		request(url.getModuleList, options).then(res => {
-			wx.setNavigationBarTitle({
-				title: res.title
-		  	});
+		request(url.getMenuList).then(res => {
 			this.setData({
-                questionList: res?.list,
-                path: res.path
+                moduleList: res,
+                contentList: res,
             })
 		})
     },
@@ -30,6 +28,12 @@ Page({
             path: '/pages/index/index',
             imageUrl: '/assets/images/logo.png'
         }
+    },
+    onModuleClick (modules) {
+        this.setData({
+            activeModule: modules.currentTarget.dataset.index,
+            contentList: modules.currentTarget.dataset.index < 0 ? this.data.moduleList : this.data.moduleList[modules.currentTarget.dataset.index].children
+        })
     },
 	onItemClick (obj) {
 		wx.navigateTo({

@@ -1,0 +1,16 @@
+/* components/NavBar/index.wxss */
+.nav-bar {
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    padding: 0 32rpx;
+    font-size: 28rpx;
+}
+.nav-bar > .img {
+    padding-top: 48rpx;
+    margin-right: 16rpx;
+}
+.nav-bar > .name {
+    padding-top: 48rpx;
+}

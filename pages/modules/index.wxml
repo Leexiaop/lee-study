@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="modules">
+    <!-- <list-cell
+        list="{{questionList}}"
+        isLink="{{true}}"
+        bind:onItemClick="onItemClick"
+    /> -->
+    <nav-bar />
+    <view class="title">
+        前端练功房
+    </view>
+    <van-search
+        class="animate__animated animate__flash"
+        value="{{ value }}"
+        shape="round"
+        background="transparent"
+        placeholder="请输入搜索关键词"
+    />
+    <view class="select">
+        <view
+            class="select-item {{activeModule === -1 ? 'activeModule' : ''}}"
+            bindtap="onModuleClick"
+            data-index="{{-1}}"
+        >#全部</view>
+        <view
+            class="select-item {{activeModule === module.activeId ? 'activeModule' : ''}}"
+            wx:for="{{moduleList}}"
+            wx:key="activeId"
+            wx:for-item="module"
+            bindtap="onModuleClick"
+            data-index="{{module.activeId}}"
+        >
+            #{{module.text}}
+        </view>
+    </view>
+    <view class="content" wx:if="{{activeModule === -1}}">
+        <view class="content-item" wx:for="{{contentList}}" wx:key="index" wx:for-item="content">
+            <view class="title animate__animated {{isIn ? 'animate__fadeInLeftBig': 'animate__fadeOutLeftBig'}}">#{{content.text}}</view>
+            <view class="list">
+                <view class="card animate__animated {{isIn ? 'animate__fadeInRightBig': 'animate__fadeOutRightBig'}}" wx:for="{{content.children}}" wx:for-item="child" wx:key="index">
+                    <view class="title">
+                        {{child.name}}
+                    </view>
+                    <view class="desc animate__animated {{isIn ? 'animate__fadeIn': 'animate__fadeOut'}}">
+                        {{child.name}} dahjdh dasjaj hfds dasiu fdsjsjfsfh aijdda fsjdjap fshie fdajhds fsp hd jsdadie ffjsb daldsj fsdioapdposjifdsj fsdh ifods ojdjoadnjvs dajodfsh fdsioda fdhsohdj hds djasoopfdsj fsdj hkjdj daof daj;
+                    </view>
+                    <view class="pagination">
+                        - {{index + 1}} -
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="content content-signle" wx:else="">
+       333dsa ddd
+    </view>
+</view>

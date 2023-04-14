@@ -1,25 +1,56 @@
 <!--index.wxml-->
-<view class="container">
-	<van-notice-bar
-		class="notice"
-		left-icon="volume-o"
-		text="走了那么多路，看了那么多书，敲了成千上万行代码，却总觉得还少看一道题..."
-	/>
-    <van-tree-select
-        items="{{ asideList }}"
-        height="100vh"
-        main-active-index="{{ activeKey }}"
-        bind:click-nav="onNavClick"
-    >
-        <view slot="content">
-            <van-grid column-num="3" square wx:if="{{grideList.length}}">
-                <block wx:for="{{grideList}}" wx:key="index" wx:for-item="item">
-                    <van-grid-item use-slot bind:click="onGridClick" data-id="{{item.id}}">
-                        <view class="grid-name">{{item.name}}</view>
-                    </van-grid-item>
-                </block>
-            </van-grid>
-            <van-empty description="暂无数据" wx:else />
+<view class="index">
+    <nav-bar />
+    <view class="banner animate__animated {{isIn ? 'animate__bounceInDown' : 'animate__bounceOutUp'}}">
+        <view class="user">
+            <van-image
+                class="img"
+                width="36"
+                height="36"
+                round
+                lazy-load
+                src="{{hasUserInfo ? userInfo.avatarUrl : 'https://img.yzcdn.cn/vant/cat.jpeg'}}"
+            />
+            <view class="name">Mr.Lee</view>
         </view>
-    </van-tree-select>
+        <van-search
+            value="{{ value }}"
+            shape="round"
+            background="transparent"
+            placeholder="请输入搜索关键词"
+        />
+    </view>
+    <view class="content">
+        <view
+            class="content-item animate__animated {{isIn ? 'animate__fadeInUpBig': 'animate__fadeOutDownBig'}}"
+            wx:for="{{asideList}}"
+            wx:key="index"
+            style="background-color: {{item.color}}"
+            bindtap="onGridClick"
+        >
+            <view class="title">
+                {{item.text}}
+            </view>
+            <view class="tag">
+                <view
+                    class="tag-item"
+                    wx:for="{{item.children}}"
+                    wx:key="index"
+                    wx:for-item="child"
+                >
+                    {{child.name}}
+                </view>
+            </view>
+            <text>\n</text>
+            <view class="content-item-icon">
+                <view class="content-item-icon-left">
+                    <van-icon name="hot" size="24" class="hot" wx:if="{{index === asideList.length - 1}}" />
+                    <van-icon name="new" size="24" />
+                </view>
+                <view class="content-item-icon-right">
+                    <van-icon name="share" class="jump" size="24" />
+                </view>
+            </view>
+        </view>
+    </view>
 </view>

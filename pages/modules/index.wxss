@@ -12,21 +12,21 @@
     font-style: oblique;
     font-stretch: extra-condensed;
 }
-.modules > .select {
-    width: 1800rpx;
+.modules > .tab-select {
     padding: 32rpx;
     display: flex;
-    overflow-x: auto;
+    overflow: scroll;
 }
-.modules > .select > .select-item {
+.modules > .tab-select > .tab-select-item {
     border: 1rpx solid gray;
     border-radius: 16rpx;
     padding: 8rpx 16rpx;
     margin-right: 16rpx;
+    white-space: nowrap;
     width: fit-content;
 }
 
-.modules > .select > .activeModule {
+.modules > .tab-select > .activeModule {
     background-color: greenyellow;
     color: #000;
 }

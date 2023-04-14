@@ -32,7 +32,7 @@ Page({
     onModuleClick (modules) {
         this.setData({
             activeModule: modules.currentTarget.dataset.index,
-            contentList: modules.currentTarget.dataset.index < 0 ? this.data.moduleList : this.data.moduleList[modules.currentTarget.dataset.index].children
+            contentList: modules.currentTarget.dataset.index < 0 ? this.data.moduleList : this.data.moduleList[modules.currentTarget.dataset.index]?.children
         })
     },
 	onItemClick (obj) {

@@ -16,14 +16,14 @@
         background="transparent"
         placeholder="请输入搜索关键词"
     />
-    <view class="select">
+    <view class="tab-select">
         <view
-            class="select-item {{activeModule === -1 ? 'activeModule' : ''}}"
+            class="tab-select-item {{activeModule === -1 ? 'activeModule' : ''}}"
             bindtap="onModuleClick"
             data-index="{{-1}}"
         >#全部</view>
         <view
-            class="select-item {{activeModule === module.activeId ? 'activeModule' : ''}}"
+            class="tab-select-item {{activeModule === module.activeId ? 'activeModule' : ''}}"
             wx:for="{{moduleList}}"
             wx:key="activeId"
             wx:for-item="module"
@@ -51,7 +51,7 @@
             </view>
         </view>
     </view>
-    <view class="content content-signle" wx:else="">
+    <view class="content" wx:else>
        333dsa ddd
     </view>
 </view>

@@ -1,6 +1,5 @@
 {
     "usingComponents": {
-        "list-cell": "/components/listCell/index",
         "van-search": "@vant/weapp/search/index",
         "nav-bar": "/components/navBar/index"
     }

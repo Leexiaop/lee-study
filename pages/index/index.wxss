@@ -1,9 +1,13 @@
 /**index.wxss**/
 .index {
     box-sizing: border-box;
+    /* width: 100%; */
+}
+.index > .banner-fixed {
     width: 100%;
-    height: 100vh;
-    overflow: auto;
+    position: fixed;
+    top: 0;
+    z-index: 100;
 }
 
 .index > .banner {
@@ -14,9 +18,11 @@
     margin-top: 124rpx;
 }
 .index > .banner > .user {
+    border-bottom: 1rpx dashed #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 8rpx;
 }
 .index > .banner > .user > .img{
     margin: 0 auto;
@@ -50,6 +56,7 @@
 .index > .content > .content-item > .title {
     font-size: 46rpx;
     font-weight: bold;
+    margin-bottom: 24rpx;
 }
 .index > .content > .content-item > .tag {
     display: flex;
@@ -64,7 +71,24 @@
     color: #333;
 }
 
-.van-search {
-    padding-left: 0!important;
-    padding-right: 0!important;
+.index > .card-list {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(hotpink, yellow);
+}
+.index > .card-list > .nav {
+    margin: 0 auto;
+    padding-top: 284rpx;
+    width: 686rpx;
+    border: 1px solid red;
+}
+
+.index > .card-list > .nav > .title {
+    font-size: 90rpx;
+    font-weight: 800;
+}
+
+.index > .card-list > .nav > .clock {
+
 }

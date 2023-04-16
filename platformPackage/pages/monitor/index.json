@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-        "van-tree-select": "@vant/weapp/tree-select/index",
-        "ec-canvas": "../../components/ec-canvas/ec-canvas"
-    }
-}

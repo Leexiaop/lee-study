@@ -1,10 +1,5 @@
 <!--index.wxml-->
 <view class="modules">
-    <!-- <list-cell
-        list="{{questionList}}"
-        isLink="{{true}}"
-        bind:onItemClick="onItemClick"
-    /> -->
     <nav-bar />
     <view class="title animate__animated animate__rubberBand">
         前端练功房
@@ -34,7 +29,7 @@
         </view>
     </view>
     <view class="content" wx:if="{{activeModule === -1}}">
-        <view class="content-item" wx:for="{{contentList}}" wx:key="index" wx:for-item="content">
+        <view class="content-all-item" wx:for="{{contentList}}" wx:key="index" wx:for-item="content">
             <view class="title animate__animated {{isIn ? 'animate__fadeInLeftBig': 'animate__fadeOutLeftBig'}}">#{{content.text}}</view>
             <view class="list">
                 <view class="card animate__animated {{isIn ? 'animate__fadeInRightBig': 'animate__fadeOutRightBig'}}" wx:for="{{content.children}}" wx:for-item="child" wx:key="index">
@@ -52,6 +47,18 @@
         </view>
     </view>
     <view class="content" wx:else>
-       333dsa ddd
+        <view class="content-signle-item" wx:if="{{contentList.length}}">
+            <view  wx:for="{{contentList}}" wx:key="index" wx:for-item="content" class="card animate__animated {{isIn ? 'animate__bounceInUp': 'animate__bounceOutUp'}}">
+                <view class="pagination">
+                    - {{index + 1}} -
+                </view>
+                <view class="title">
+                    {{content.name}}
+                </view>
+                <view class="desc animate__animated animate__flash">
+                    dahjdh dasjaj hfds dasiu fdsjsjfsfh aijdda fsjdjap fshie fdajhds fsp hd jsdadie ffjsb daldsj fsdioapdposjifdsj fsdh ifods ojdjoadnjvs dajodfsh fdsioda fdhsohdj hds djasoopfdsj fsdj hkjdj daof daj;
+                </view>
+            </view>
+        </view>
     </view>
 </view>

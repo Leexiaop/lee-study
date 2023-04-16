@@ -1,56 +1,67 @@
 <!--index.wxml-->
 <view class="index">
-    <nav-bar />
-    <view class="banner animate__animated {{isIn ? 'animate__bounceInDown' : 'animate__bounceOutUp'}}">
-        <view class="user">
-            <van-image
-                class="img"
-                width="36"
-                height="36"
-                round
-                lazy-load
-                src="{{hasUserInfo ? userInfo.avatarUrl : 'https://img.yzcdn.cn/vant/cat.jpeg'}}"
-            />
-            <view class="name">Mr.Lee</view>
-        </view>
-        <van-search
-            value="{{ value }}"
-            shape="round"
-            background="transparent"
-            placeholder="请输入搜索关键词"
-        />
+    <view class="banner-fixed" wx:if="{{isFixed}}">
+        <nav-bar />
     </view>
-    <view class="content">
-        <view
-            class="content-item animate__animated {{isIn ? 'animate__fadeInUpBig': 'animate__fadeOutDownBig'}}"
-            wx:for="{{asideList}}"
-            wx:key="index"
-            style="background-color: {{item.color}}"
-            bindtap="onGridClick"
-        >
-            <view class="title">
-                {{item.text}}
+    <block wx:if="{{!isFixed}}">
+        <view id="banner" class="banner animate__animated {{isIn ? 'animate__bounceInDown' : 'animate__bounceOutUp'}}">
+            <view class="user">
+                <van-image
+                    class="img"
+                    width="36"
+                    height="36"
+                    round
+                    lazy-load
+                    src="{{hasUserInfo ? userInfo.avatarUrl : 'https://img.yzcdn.cn/vant/cat.jpeg'}}"
+                />
+                <view class="name">Mr.Lee</view>
             </view>
-            <view class="tag">
-                <view
-                    class="tag-item"
-                    wx:for="{{item.children}}"
-                    wx:key="index"
-                    wx:for-item="child"
-                >
-                    {{child.name}}
+        </view>
+        <view class="content">
+            <view
+                class="content-item animate__animated {{isIn ? 'animate__fadeInUpBig': 'animate__fadeOutDownBig'}}"
+                wx:for="{{list}}"
+                wx:key="index"
+                style="background-color: {{item.background}}"
+                bindtap="onGridClick"
+            >
+                <view class="title">
+                    {{item.title}}
                 </view>
-            </view>
-            <text>\n</text>
-            <view class="content-item-icon">
-                <view class="content-item-icon-left">
-                    <van-icon name="hot" size="24" class="hot" wx:if="{{index === asideList.length - 1}}" />
-                    <van-icon name="new" size="24" />
+                <view class="tag">
+                    <view
+                        class="tag-item"
+                        wx:for="{{item.descList}}"
+                        wx:key="index"
+                        wx:for-item="child"
+                    >
+                        {{child}}
+                    </view>
                 </view>
-                <view class="content-item-icon-right">
-                    <van-icon name="share" class="jump" size="24" />
+                <text>\n</text>
+                <view class="content-item-icon">
+                    <view class="content-item-icon-left">
+                        <van-icon name="hot" size="24" class="hot" wx:if="{{index === asideList.length - 1}}" />
+                        <van-icon name="new" size="24" />
+                    </view>
+                    <view class="content-item-icon-right">
+                        <van-icon name="share" class="jump" size="24" />
+                    </view>
                 </view>
             </view>
         </view>
-    </view>
+    </block>
+    <block wx:if="{{isFixed}}">
+        <view class="card-list">
+            <view class="nav">
+                <view class="title">
+                    前端练功房
+                </view>
+                <view class="clock">
+                    <!-- TODAY {{timer}} -->
+                    TODAY 2023-09-12 22:21:54 Sunday
+                </view>
+            </view>
+        </view>
+    </block>
 </view>

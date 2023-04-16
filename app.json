@@ -1,11 +1,8 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/center/index",
         "pages/detail/index",
-        "pages/modules/index",
-        "pages/login/index",
-        "pages/resources/index"
+        "pages/modules/index"
     ],
     "subpackages": [
         {
@@ -13,13 +10,6 @@
             "pages": [
                 "pages/demo/index"
             ]
-        },
-        {
-            "root": "platformPackage",
-            "pages": [
-                "pages/monitor/index"
-            ],
-            "independent": true
         }
     ],
     "window": {

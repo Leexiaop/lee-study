@@ -1,11 +1,16 @@
 <!--index.wxml-->
 <view class="detail">
+    <view class="banner-fixed">
+        <nav-bar back title="{{options.title}}" />
+    </view>
 	<block wx:if="{{isLoading}}">
 		<view class="loading">
 			<van-loading type="spinner" color="#fff" />
 		</view>
 	</block>
 	<block wx:else>
-		<towxml nodes="{{answer}}"/>
+        <view class="content">
+		    <towxml nodes="{{answer}}"/>
+        </view>
 	</block>
 </view>

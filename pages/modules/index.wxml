@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <view class="modules">
-    <nav-bar />
-    <view class="title animate__animated animate__rubberBand">
+    <!-- <nav-bar back /> -->
+    <!-- <view class="title animate__animated animate__rubberBand">
         前端练功房
-    </view>
+    </view> -->
     <van-search
         class="animate__animated animate__flash"
         value="{{ value }}"
@@ -32,12 +32,12 @@
         <view class="content-all-item" wx:for="{{contentList}}" wx:key="index" wx:for-item="content">
             <view class="title animate__animated {{isIn ? 'animate__fadeInLeftBig': 'animate__fadeOutLeftBig'}}">#{{content.text}}</view>
             <view class="list">
-                <view class="card animate__animated {{isIn ? 'animate__fadeInRightBig': 'animate__fadeOutRightBig'}}" wx:for="{{content.children}}" wx:for-item="child" wx:key="index">
+                <view class="card animate__animated {{isIn ? 'animate__fadeInRightBig': 'animate__fadeOutRightBig'}}" wx:for="{{content.children}}" wx:for-item="child" wx:key="index" bindtap="onItemClick" data-obj="{{child}}">
                     <view class="title">
                         {{child.name}}
                     </view>
                     <view class="desc animate__animated {{isIn ? 'animate__fadeIn': 'animate__fadeOut'}}">
-                        {{child.name}} dahjdh dasjaj hfds dasiu fdsjsjfsfh aijdda fsjdjap fshie fdajhds fsp hd jsdadie ffjsb daldsj fsdioapdposjifdsj fsdh ifods ojdjoadnjvs dajodfsh fdsioda fdhsohdj hds djasoopfdsj fsdj hkjdj daof daj;
+                        {{child.desc}}
                     </view>
                     <view class="pagination">
                         - {{index + 1}} -
@@ -56,7 +56,7 @@
                     {{content.name}}
                 </view>
                 <view class="desc animate__animated animate__flash">
-                    dahjdh dasjaj hfds dasiu fdsjsjfsfh aijdda fsjdjap fshie fdajhds fsp hd jsdadie ffjsb daldsj fsdioapdposjifdsj fsdh ifods ojdjoadnjvs dajodfsh fdsioda fdhsohdj hds djasoopfdsj fsdj hkjdj daof daj;
+                    {{content.desc}}
                 </view>
             </view>
         </view>

@@ -32,7 +32,7 @@ Page({
 				});
 				this.setData({answer: res, isLoading: false});
 			};
-		});
+    });
 	},
 	onCommitClick () {
 		this.setData({isCommitShow: true})

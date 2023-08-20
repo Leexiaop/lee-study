@@ -2,6 +2,7 @@
     "usingComponents": {
         "towxml":"/towxml/towxml",
         "van-loading": "@vant/weapp/loading/index",
-        "van-empty": "@vant/weapp/empty/index"
+        "van-empty": "@vant/weapp/empty/index",
+        "nav-bar": "/components/navBar/index"
     }
 }

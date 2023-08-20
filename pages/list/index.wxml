@@ -1,0 +1,18 @@
+<!--pages/list/index.wxml-->
+<view class="list">
+    <view class="banner-fixed">
+        <nav-bar back title="{{options.title}}" />
+    </view>
+    <view class="content">
+        <view
+            bindtap="onItemClick"
+            data-obj="{{item}}"
+            class="item"
+            wx:for="{{list}}"
+            wx:key="index"
+            style="background-color: {{item.background}};transform: rotate({{item.rotate}}deg);margin-left: {{item.margin}}rpx;box-shadow: 0rpx 0rpx 10rpx 0rpx {{item.background}};"
+        >
+            {{item.name}}
+        </view>
+    </view>
+</view>

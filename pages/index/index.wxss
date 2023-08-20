@@ -7,6 +7,7 @@
     width: 100%;
     position: fixed;
     top: 0;
+    background-color: #000;
     z-index: 100;
 }
 
@@ -20,8 +21,8 @@
 .index > .banner > .user {
     border-bottom: 1rpx dashed #fff;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    /* justify-content: center; */
     padding-bottom: 8rpx;
 }
 .index > .banner > .user > .img{
@@ -29,6 +30,7 @@
 }
 .index > .banner > .user > .name{
     margin: 0 auto;
+    font-size: 88rpx;
 }
 .index > .content {
     width: 100%;
@@ -81,7 +83,6 @@
     margin: 0 auto;
     padding-top: 284rpx;
     width: 686rpx;
-    border: 1px solid red;
 }
 
 .index > .card-list > .nav > .title {
@@ -90,5 +91,5 @@
 }
 
 .index > .card-list > .nav > .clock {
-
+    margin-bottom: 48rpx;
 }

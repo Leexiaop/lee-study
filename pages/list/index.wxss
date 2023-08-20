@@ -1,0 +1,26 @@
+/* pages/list/index.wxss */
+
+.list {
+    width: 100%;
+    box-sizing: border-box;
+}
+.list > .banner-fixed {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #000;
+    z-index: 100;
+}
+.list > .content {
+    width: 100%;
+    padding-top: 164rpx;
+    box-sizing: border-box;
+}
+.list > .content > .item {
+    color: #000;
+    width: 558rpx;
+    margin: 0 auto;
+    border-radius: 24rpx;
+    margin-bottom: 24rpx;
+    padding: 24rpx;
+}

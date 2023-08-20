@@ -6,9 +6,19 @@
     padding: 0 32rpx;
     font-size: 28rpx;
 }
-.nav-bar > .img {
+.nav-bar > .left {
+    display: flex;
+    align-items: center;
     margin-right: 16rpx;
 }
-.nav-bar > .name {
-    margin-bottom: 8rpx;
+.nav-bar > .left > .img {
+    margin-top: 8rpx;
+}
+.nav-bar > .left > .name {
+    margin-left: 8rpx;
+}
+.nav-bar > .middle {
+    width: 40vw;
+    text-align: center;
+    font-size: 38rpx;
 }

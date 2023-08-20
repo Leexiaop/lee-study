@@ -1,38 +1,42 @@
 // index.js
 // const app = getApp()
-const moment = require('moment');
 Page({
 	data: {
         list: [
             {
+                id: 1,
                 title: '面试和学习永无止境',
                 descList: ['前端面试', '三维开发', '服务端与项目部署', 'HTTP和安全', '地图学习', '...'],
-                background: 'yellow'
+                background: 'yellow',
+                path: 'modules'
             },
             {
+                id: 2,
                 title: '公司真题一网打尽',
                 descList: ['字节跳动', '阿里巴巴', '腾讯', '华为', '美团', '...'],
                 background: 'hotpink'
             },
             {
+                id: 3,
                 title: '三维案例因有尽有',
                 descList: ['ThreeJs', 'CesuimJS', 'BabylonJS', 'WebGPU', 'WebGL', '...'],
                 background: 'chartreuse'
             },
             {
+                id: 4,
                 title: '资源下载',
                 descList: ['React', 'Vue2.x', 'Vue3.x', 'GLSL', 'WebGL', '...'],
-                background: 'white'
+                background: 'white',
+                path: 'resources'
             },
             {
+                id: 5,
                 title: '机构面试题汇总',
                 descList: ['前锋', '黑马', '爪哇', '...'],
                 background: 'mediumturquoise'
             }
         ],
-        isIn: true,
-        isFixed: false,
-        timer: ''
+        isIn: true
 	},
 	onLoad () {
         wx.showShareMenu({
@@ -42,12 +46,8 @@ Page({
     },          
 	onShow () {
         this.setData({
-            isIn: true,
-            isFixed: false
+            isIn: true
         })
-    },
-    onReachBottom (e) {
-        this.setData({isFixed: true})
     },
     onShareAppMessage() {
         return {
@@ -56,13 +56,21 @@ Page({
             imageUrl: '/assets/images/logo.png'
         }
     },
-	onGridClick () {
+	onGridClick (item) {
+        console.log(item, 444)
+        if (!item.currentTarget.dataset.item.path) {
+            wx.showToast({
+                title: '正在努力编写中...',
+                icon: 'none'
+            })
+            return;
+        }
         this.setData({
             isIn: false
         })
         setTimeout(() => {
             wx.navigateTo({
-                url: `/pages/modules/index`,
+                url: `/pages/${item.currentTarget.dataset.item.path}/index`,
           })
         }, 100)
     }

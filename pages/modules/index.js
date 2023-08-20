@@ -35,12 +35,12 @@ Page({
     onModuleClick (modules) {
         this.setData({
             activeModule: modules.currentTarget.dataset.index,
-            contentList: modules.currentTarget.dataset.index < 0 ? this.data.moduleList : this.data.moduleList[modules.currentTarget.dataset.index]?.children
+            contentList: modules.currentTarget.dataset.index < 0 ? this.data.moduleList : this.data.moduleList[modules.currentTarget.dataset.index - 1]?.children
         })
     },
 	onItemClick (obj) {
 		wx.navigateTo({
-		  	url: `/pages/detail/index?path=${this.data.path}&title=${obj.detail.title}`,
+		  	url: `/pages/list/index?path=${obj.currentTarget.dataset.obj.path}&title=${obj.currentTarget.dataset.obj.name}`,
 		})
 	}
 });

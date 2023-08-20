@@ -2,7 +2,9 @@
     "pages": [
         "pages/index/index",
         "pages/detail/index",
-        "pages/modules/index"
+        "pages/modules/index",
+        "pages/list/index",
+        "pages/resources/index"
     ],
     "subpackages": [
         {
@@ -17,8 +19,7 @@
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#000",
         "navigationBarTitleText": "前端练功房",
-        "navigationBarTextStyle": "white",
-        "navigationStyle": "custom"
+        "navigationBarTextStyle": "white"
     },
     "style": "v2",
     "sitemapLocation": "sitemap.json"
